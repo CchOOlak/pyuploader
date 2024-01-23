@@ -1,0 +1,44 @@
+<html>  
+<head>  
+    <title>upload</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+            border: 5px solid aquamarine;
+        }
+
+        ul li {
+            padding: 8px 16px;
+            border-bottom: 5px solid aquamarine;
+        }
+
+        ul li:last-child {
+            border-bottom: none
+        }
+        /* ol, li {
+            border: 5px solid aquamarine;
+        } */
+    </style>
+</head>  
+<body>  
+    <form action = "/success" method = "post" enctype="multipart/form-data">  
+        <input type="file" name="file" />  
+        <input type = "submit" value="Upload">
+    </form>
+    <div>
+        <h2>Files</h2>
+        <ul>
+            {%for i in range(0, len)%} 
+                <li>
+                    <a href="{{burl}}{{files[i]}}">{{files[i]}}</a>
+                    <form action="/delete" method="post">
+                        <input type="text" name="filename" value={{files[i]}} hidden>
+                        <input type="submit" value="delete" style="background-color: red; color: wheat;">
+                    </form>
+                </li> 
+            {%endfor%}   
+        </ul>
+    </div>
+</body>  
+</html>  

@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  app:
+    build: .
+    container_name: pyUploader
+    command: python app.py
+    ports:
+      - 5055:5000
+    restart: always
+    volumes:
+      - .:/code
