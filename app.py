@@ -16,7 +16,7 @@ def success():
         ext = f.filename.split('.')[-1]
         uid = str(uuid.uuid4())
         f.save(f'./media/{uid}.{ext}')
-        return render_template("success.html", name = f'{request.host_url}{uid}.{ext}')
+        return render_template("success.html", name = f'{request.host_url}media/{uid}.{ext}')
 
 @app.route('/delete', methods = ['POST'])
 def delete():

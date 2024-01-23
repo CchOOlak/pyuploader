@@ -31,7 +31,7 @@
         <ul>
             {%for i in range(0, len)%} 
                 <li>
-                    <a href="{{burl}}{{files[i]}}">{{files[i]}}</a>
+                    <a href="{{burl}}media/{{files[i]}}">{{files[i]}}</a>
                     <form action="/delete" method="post">
                         <input type="text" name="filename" value={{files[i]}} hidden>
                         <input type="submit" value="delete" style="background-color: red; color: wheat;">
